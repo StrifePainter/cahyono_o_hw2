@@ -1,0 +1,160 @@
+/*Utility Classes*/
+.hidden{
+    display:none;
+}
+
+/*General Rules*/
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background-color:black;
+    color:white;
+}
+
+/*Main Header*/
+
+header{
+    background-color:red;
+   /* padding-top: 10px;
+    padding-bottom:10px;
+    padding-left: 0;
+    padding-right:0; */
+    padding:10px 0;
+}
+
+#main-logo {
+    display:block;
+    width: 300px;
+    /*margin top and bottom -. left and right auto, auto means equal */
+    margin: 0 auto;
+}
+
+/* Character Nav */
+
+#character-nav{
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #675050;
+    background-image: url('../images/characters_bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: multiply;
+}
+
+/*how to get rid of bullet points */
+#characters {
+    list-style-type:none;
+    padding: 0;
+    text-align: center;
+}
+
+#characters li {
+    display: inline-block;
+    margin: 10px;
+}
+
+#characters li img {
+    border: solid 1px white;
+    padding:10px;
+    background-color: black;
+    box-shadow: 0px 0px 10px 0 rgba(255,255,255, 0.9);
+    transition:all .5s ease-in-out;
+}
+
+#characters li a {
+    text-decoration:none;
+}
+
+#characters li img:hover {
+    filter: grayscale(100%);
+    border-radius: 50%;
+    
+}
+
+#instuctions {
+    padding: 20px;
+}
+
+#instructions h3 {
+    font-size: 32px;
+    text-align: center;
+}
+
+#instructions p {
+    font-size: 18px;
+    text-align: center;
+}
+
+#main-footer {
+    height: 80px;
+    background-color: rgb(40,37,37);
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* LightBox rules */
+
+.lightbox {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background-color: rgba(0,0,0,0.85);
+    display: none;
+    background-repeat: no-repeat;
+    background-size: 55vh;
+    background-position: 40px bottom;
+    /*to make all backgrounds for lightbox not repeat it is effecting all lightboxes.*/
+}
+
+/*rgba = a is transparency level*/
+
+.lightbox:target {
+    display: block;
+}
+
+#lightbox1 {
+    background-image: url(../images/Cap_LB_Bg.png);
+}
+
+#lightbox2 {
+    background-image: url(../images/hulk.png);
+}
+
+#lightbox3 {
+    background-image: url(../images/Thor_LB_Bg.png);
+}
+
+#lightbox4 {
+    background-image: url(../images/widow.png);
+}
+
+.lightbox-close {
+    color: white;
+    font-size: 36px;
+    font-weight: bold;
+    text-decoration: none;
+    margin-left: 95vw;
+transition: all .5s ease-in-out;
+}
+
+.lightbox-close:hover {
+    color: red;
+}
+
+.lightbox section {
+    width: 600px;
+    margin-left: 40%;
+    margin-top: 50px;
+}
+
+.lb-heading {
+    font-size: 32px;
+}
+
+.lightbox p {
+    line-height: 22px;
+}
+/* the lightbox p selects all p in lightbox. if it was just p, it would do all p. this is the spacing between the lines.*/
