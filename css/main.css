@@ -24,7 +24,8 @@ header{
 
 #main-logo {
     display:block;
-    width: 300px;
+    width: 400px;
+    /*to adjust sizes, use width/height*/
     /*margin top and bottom -. left and right auto, auto means equal */
     margin: 0 auto;
 }
@@ -48,18 +49,18 @@ header{
     text-align: center;
 }
 
-#characters li {
+#characters li { 
     display: inline-block;
-    margin: 60px;
+    margin: 20px;
 }
 
 #characters li img {
     border: solid 1px white;
     border-radius: 50%;
-    padding:10px;
+    padding: 5px;
     background: linear-gradient(to bottom, #e7ff5f, #35ffff, #c980bf);
     box-shadow: 0px 0px 10px 0 rgba(255,255,255, 0.9);
-    transition:all .5s ease-in-out;
+    transition: all .5s ease-in-out;
     animation: 15s ease infinite;
 }
 
@@ -70,11 +71,10 @@ header{
 
 #characters li img:hover {
     filter: grayscale(100%);
-    width: auto; /* adjust to control the size */
+    width: auto;
     aspect-ratio: 1;
-  --g:/14.134% 14.134% radial-gradient(#000 calc(71% - 1px),#0000 71%) no-repeat;
-  mask: 100% 50% var(--g),97.291% 66.235% var(--g),89.457% 80.711% var(--g),77.347% 91.858% var(--g),62.274% 98.47% var(--g),45.871% 99.829% var(--g),29.915% 95.789% var(--g),16.136% 86.786% var(--g),6.026% 73.797% var(--g),0.682% 58.23% var(--g),0.682% 41.77% var(--g),6.026% 26.203% var(--g),16.136% 13.214% var(--g),29.915% 4.211% var(--g),45.871% 0.171% var(--g),62.274% 1.53% var(--g),77.347% 8.142% var(--g),89.457% 19.289% var(--g),97.291% 33.765% var(--g),radial-gradient(100% 100%,#000 42.348%,#0000 calc(42.348% + 1px));
- transition: border-radius 0.5s ease-in-out;
+    border-start-end-radius: 10%;
+    border-top-left-radius: ;
 }
 
 
