@@ -7,8 +7,8 @@
 </head>
 <body>
     <header>
-        <h1 class="hidden">All about the team</h1>
-        <img src="images/logo.svg" alt="Marvel Comics Logo" id="main-logo">
+        <h1 class="hidden">The Pathfinder Group Characters</h1>
+        <img src="images/FribbitBlogIcon.png" alt="Fribbit Blog Icon" id="main-logo">
     </header>
     <main>
         <nav id="character-nav">
@@ -16,22 +16,22 @@
             <ul id="characters">
                 <li>
                     <a href="#lightbox1">
-                        <img src="images/FribbitLove.png" alt="Fribbit">
+                        <img src="images/FribbitIcon.png" alt="Fribbit">
                     </a>
                 </li>
                 <li>
                     <a href="#lightbox2">
-                        <img src="images/hulk.png" alt="Orion">
+                        <img src="images/OrionIcon.png" alt="Orion">
                     </a>
                 </li>
                 <li>
                     <a href="#lightbox3">
-                        <img src="images/thor.png" alt="Onyx">
+                        <img src="images/OnyxIcon.png" alt="Onyx">
                     </a>
                 </li>
                 <li>
                     <a href="#lightbox4">
-                        <img src="images/widow.png" alt="Wilbur">
+                        <img src="images/WilburIcon.png" alt="Wilbur">
                     </a>
                 </li>
             </ul>
@@ -43,18 +43,19 @@
 
         <div class="carousel">
             <div class="group">
-            <div><img src="images/FribbitLove.png"></div>
-            <div><img src="images/OrionBirb.png"></div>
-            <div><img src="images/OnyxOk.png"></div>
-            <div><img src="images/WilburNo.png"></div>
-            <div><img src="images/ShaguBald.png"></div>
+            <div class="card"><img src="images/FribbitLove.png" height="100" width="100"></div>
+            <div class="card"><img src="images/OrionBirb.png" height="100" width="100"></div>
+            <div class="card"><img src="images/OnyxOk.png" height="100" width="100"></div>
+            <div class="card"><img src="images/WilburNo.png" height="100" width="100"></div>
+            <div class="card"><img src="images/ShaguBald.png" height="100" width="100"></div>
             </div>
-
-            <div class="hidden"><img src="images/FribbitLove.png"></div>
-            <div class="hidden"><img src="images/OrionBirb.png"></div>
-            <div class="hidden"><img src="images/OnyxOk.png"></div>
-            <div class="hidden"><img src="images/WilburNo.png"></div>
-            <div class="hidden"><img src="images/ShaguBald.png"></div>
+            <div aria-hidden class="group"> 
+                <!--aria-hidden, this set can be ignored by accessibility tools-->
+            <div class="card"><img src="images/FribbitLove.png" height="100" width="100"></div>
+            <div class="card"><img src="images/OrionBirb.png" height="100" width="100"></div>
+            <div class="card"><img src="images/OnyxOk.png" height="100" width="100"></div>
+            <div class="card"><img src="images/WilburNo.png" height="100" width="100"></div>
+            <div class="card"><img src="images/ShaguBald.png" height="100" width="100"></div>
         </div>
     </div>
     </main>

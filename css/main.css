@@ -7,14 +7,14 @@
 
 body{
     font-family:Arial, Helvetica, sans-serif;
-    background-color:black;
+    background-color:rgb(117, 136, 73);
     color:white;
 }
 
 /*Main Header*/
 
 header{
-    background-color:red;
+    background-color:rgb(184, 209, 70);
    /* padding-top: 10px;
     padding-bottom:10px;
     padding-left: 0;
@@ -34,8 +34,8 @@ header{
 #character-nav{
     padding-top: 40px;
     padding-bottom: 40px;
-    background-color: #675050;
-    background-image: url('../images/characters_bg.jpg');
+    background-color: #505067;
+    background-image: url('../images/Comic5.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-blend-mode: multiply;
@@ -50,24 +50,19 @@ header{
 
 #characters li {
     display: inline-block;
-    margin: 10px;
+    margin: 60px;
 }
 
 #characters li img {
     border: solid 1px white;
     border-radius: 50%;
     padding:10px;
-    background: linear-gradient(to bottom, #ff7e5f, #484788, cyan);
+    background: linear-gradient(to bottom, #e7ff5f, #35ffff, #c980bf);
     box-shadow: 0px 0px 10px 0 rgba(255,255,255, 0.9);
     transition:all .5s ease-in-out;
     animation: 15s ease infinite;
 }
 
-@keyframes linearGradient {
-    0%   { background-position: 0% 50%; }
-    50%  { background-position: 100% 50%; }
-    100% { background-position: 0% 200%; }
-}
 
 #characters li a {
     text-decoration:none;
@@ -75,14 +70,18 @@ header{
 
 #characters li img:hover {
     filter: grayscale(100%);
-    border-radius: 50%;
-    
+    width: auto; /* adjust to control the size */
+    aspect-ratio: 1;
+  --g:/14.134% 14.134% radial-gradient(#000 calc(71% - 1px),#0000 71%) no-repeat;
+  mask: 100% 50% var(--g),97.291% 66.235% var(--g),89.457% 80.711% var(--g),77.347% 91.858% var(--g),62.274% 98.47% var(--g),45.871% 99.829% var(--g),29.915% 95.789% var(--g),16.136% 86.786% var(--g),6.026% 73.797% var(--g),0.682% 58.23% var(--g),0.682% 41.77% var(--g),6.026% 26.203% var(--g),16.136% 13.214% var(--g),29.915% 4.211% var(--g),45.871% 0.171% var(--g),62.274% 1.53% var(--g),77.347% 8.142% var(--g),89.457% 19.289% var(--g),97.291% 33.765% var(--g),radial-gradient(100% 100%,#000 42.348%,#0000 calc(42.348% + 1px));
+ transition: border-radius 0.5s ease-in-out;
 }
 
 
 
+
   .carousel {
-    margin: 0 auto;
+    margin: 100px auto;
     padding: 20px 0;
     overflow: hidden;
     flex: 0 0 100%;
@@ -91,21 +90,23 @@ header{
   
   .group {
     display: flex;
-    /*display:flex puts them in a row*/
-    gap: 20px;
-    padding-right: 20px;
-    animation: scrolling 10s linear infinite;
+    /*display:flex puts them in a row side by*/
+    gap: 1em;
+    justify-content: center;
+    align-items: center;
+    animation: spin 10s infinite linear;
+  }
+
+  .card {
+    height: 5em;
+    padding: 1em;
+    border-radius: .2em;
   }
 
 
-
-   @keyframes scrolling {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
+   @keyframes spin {
+    from {translate: 0px;}
+    to {translate: -100%;}
    }
 
 
@@ -146,8 +147,8 @@ header{
     background-color: rgba(0,0,0,0.85);
     display: none;
     background-repeat: no-repeat;
-    background-size: 55vh;
-    background-position: 40px bottom;
+    background-size: 90vh;
+    background-position: 20px top;
     /*to make all backgrounds for lightbox not repeat it is effecting all lightboxes.*/
 }
 
@@ -158,19 +159,19 @@ header{
 }
 
 #lightbox1 {
-    background-image: url(../images/Cap_LB_Bg.png);
+    background-image: url(../images/Fribbitdresssuit.png);
 }
 
 #lightbox2 {
-    background-image: url(../images/hulk.png);
+    background-image: url(../images/OrionTransparent.png);
 }
 
 #lightbox3 {
-    background-image: url(../images/Thor_LB_Bg.png);
+    background-image: url(../images/OnyxMasqueradeTransparent.png);
 }
 
 #lightbox4 {
-    background-image: url(../images/widow.png);
+    background-image: url(../images/wilb);
 }
 
 .lightbox-close {
