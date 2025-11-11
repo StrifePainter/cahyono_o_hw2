@@ -55,10 +55,18 @@ header{
 
 #characters li img {
     border: solid 1px white;
+    border-radius: 50%;
     padding:10px;
-    background-color: black;
+    background: linear-gradient(to bottom, #ff7e5f, #484788, cyan);
     box-shadow: 0px 0px 10px 0 rgba(255,255,255, 0.9);
     transition:all .5s ease-in-out;
+    animation: 15s ease infinite;
+}
+
+@keyframes linearGradient {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 200%; }
 }
 
 #characters li a {
@@ -71,7 +79,41 @@ header{
     
 }
 
-#instuctions {
+
+
+  .carousel {
+    margin: 0 auto;
+    padding: 20px 0;
+    overflow: hidden;
+    flex: 0 0 100%;
+    gap: 20px;
+  }
+  
+  .group {
+    display: flex;
+    /*display:flex puts them in a row*/
+    gap: 20px;
+    padding-right: 20px;
+    animation: scrolling 10s linear infinite;
+  }
+
+
+
+   @keyframes scrolling {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+   }
+
+
+
+
+
+
+#instructions {
     padding: 20px;
 }
 
