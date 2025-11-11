@@ -61,7 +61,6 @@ header{
     background: linear-gradient(to bottom, #e7ff5f, #35ffff, #c980bf);
     box-shadow: 0px 0px 10px 0 rgba(255,255,255, 0.9);
     transition: all .5s ease-in-out;
-    animation: 15s ease infinite;
 }
 
 
@@ -72,9 +71,8 @@ header{
 #characters li img:hover {
     filter: grayscale(100%);
     width: auto;
-    aspect-ratio: 1;
-    border-start-end-radius: 10%;
-    border-top-left-radius: ;
+    aspect-ratio: 4;
+    transform: rotateY(180deg);
 }
 
 
