@@ -15,11 +15,10 @@ body{
 
 header{
     background-color:rgb(184, 209, 70);
-   /* padding-top: 10px;
+    padding-top: 0px;
     padding-bottom:10px;
     padding-left: 0;
-    padding-right:0; */
-    padding:10px 0;
+    padding-right:0;
 }
 
 #main-logo {
@@ -29,6 +28,53 @@ header{
     /*margin top and bottom -. left and right auto, auto means equal */
     margin: 0 auto;
 }
+
+.glitch {
+  animation: glitch 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+}
+
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-4px, 4px);
+  }
+  40% {
+    transform: translate(-4px, -4px);
+  }
+  60% {
+    transform: translate(4px, 4px);
+  }
+  80% {
+    transform: translate(4px, -4px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+#bee1 {
+    transform: scale(50%);
+    position: relative;
+  top: 60px;
+  left: 20px;
+}
+
+#bee2 {
+    transform: scale(90%);
+    position: relative;
+  top: 200px;
+  left: 20px;
+}
+
+#bee3 {
+    transform: scale(90%);
+    position: relative;
+  top: 90px;
+  left: 90px;
+}
+
 
 /* Character Nav */
 
@@ -60,7 +106,15 @@ header{
     padding: 5px;
     background: linear-gradient(to bottom, #e7ff5f, #35ffff, #c980bf);
     box-shadow: 0px 0px 10px 0 rgba(255,255,255, 0.9);
-    transition: all .5s ease-in-out;
+    transition: all .5s ease-out;
+    --s: 250px;   /* the size of the image */
+    --b: 8px;     /* the border thickness*/
+    --g: 14px;    /* the gap */
+    --c: #5bffd1; /* the color */
+  
+  width: 250px;
+  aspect-ratio: 1;
+  cursor: pointer;
 }
 
 
@@ -69,21 +123,36 @@ header{
 }
 
 #characters li img:hover {
-    filter: grayscale(100%);
-    width: auto;
-    aspect-ratio: 4;
-    transform: rotateY(180deg);
+
+    aspect-ratio: 1;
+    transform: rotateY(180deg) scale(1.05);
+    outline: var(--b) solid var(--c);
+    outline-offset: var(--g);
+  background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #e7ff5f, #35ffff, #c980bf, #07b39b, #6fba82);
+  animation: animatedgradient 3s ease alternate infinite;
+  background-size: 300% 300%;
 }
 
 
+@keyframes animatedgradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 100%;
+	}
+}
 
 
-  .carousel {
+/*infinite slide carousel*/
+.carousel {
+    width: 1200px;
     margin: 100px auto;
     padding: 20px 0;
-    overflow: hidden;
-    flex: 0 0 100%;
-    gap: 20px;
+    overflow-x: auto;
   }
   
   .group {
@@ -93,6 +162,7 @@ header{
     justify-content: center;
     align-items: center;
     animation: spin 10s infinite linear;
+    padding-right: 1em;
   }
 
   .card {
@@ -169,7 +239,7 @@ header{
 }
 
 #lightbox4 {
-    background-image: url(../images/wilb);
+    background-image: url(../images/Wilburtransparent.png);
 }
 
 .lightbox-close {
