@@ -19,14 +19,28 @@ header{
     padding-bottom:10px;
     padding-left: 0;
     padding-right:0;
+    height: 250px;
+    position: relative;
+    /*height for border height and position is relative.
+    Absolute will be like it's not there/can be repositioned/not relative to parent if it's a child or in a tag.
+    Relative is like clipping: will stay in the parent.
+
+    Use RELATIVE for parent and ABSOLUTE for child. IF YOU WANT THE THING TO CLIP INSIDE A CERTAIN ELEMENT!
+
+    Absolute will make element go out of doc and everything else will ignore it, based to the body unless parents have position relative.
+    */
 }
 
 #main-logo {
-    display:block;
-    width: 400px;
-    /*to adjust sizes, use width/height*/
-    /*margin top and bottom -. left and right auto, auto means equal */
-    margin: 0 auto;
+  width: 400px;
+    /* use posittion abosolute */
+    /* top: 50% and left: 50% place the top-left corner of the logo at the center of the parent/header.
+
+    transform: translate(-50%, -50%) shifts it back by half of its own width and height, perfectly centering it both horizontally and vertically. */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .glitch {
@@ -123,11 +137,10 @@ header{
 }
 
 #characters li img:hover {
-
-    aspect-ratio: 1;
-    transform: rotateY(180deg) scale(1.05);
-    outline: var(--b) solid var(--c);
-    outline-offset: var(--g);
+  aspect-ratio: 1;
+  transform: rotateY(180deg) scale(1.05);
+  outline: var(--b) solid var(--c);
+  outline-offset: var(--g);
   background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #e7ff5f, #35ffff, #c980bf, #07b39b, #6fba82);
   animation: animatedgradient 3s ease alternate infinite;
   background-size: 300% 300%;
@@ -153,8 +166,19 @@ header{
     margin: 100px auto;
     padding: 20px 0;
     overflow-x: auto;
+    display: flex;
+    mask-image:linear-gradient(to right, 
+    rgba(0,0,0,0),
+    rgba(0,0,0,1) 20%,
+    rgba(0,0,0,1) 80%,
+    rgba(0,0,0,0)
+    );
   }
   
+  .carousel::-webkit-scrollbar {
+    display: none;
+  }
+
   .group {
     display: flex;
     /*display:flex puts them in a row side by*/
@@ -167,7 +191,7 @@ header{
 
   .card {
     height: 5em;
-    padding: 1em;
+    padding: 3.5em;
     border-radius: .2em;
   }
 
