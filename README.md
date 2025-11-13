@@ -1,4 +1,4 @@
-# cahyono_o_hw2
+# Olivia's Pathfinder Character Build
 Character build site to learn css for homework 2 in MultiMedia Authoring!
 
 ## Installation 💻
