@@ -69,25 +69,38 @@ header{
 }
 
 #bee1 {
-    transform: scale(50%);
-    position: relative;
+    transform: scale(30%);
+    position: absolute;
   top: 10px;
-  left: 20px;
+  left: 120px;
 }
 
 #bee2 {
     transform: scale(90%);
-    position: relative;
+    position: absolute;
   top: 100px;
   left: 20px;
 }
 
 #bee3 {
     transform: scale(110%);
-    position: relative;
+    position: absolute;
   top: 40px;
   left: 90px;
 }
+
+#bee4 {
+    position: absolute;
+  top: 40px;
+  left: 900px;
+}
+
+#bee5 {
+    position: absolute;
+  top: 100px;
+  left: 1200px;
+}
+
 
 
 /* Character Nav */
@@ -124,7 +137,7 @@ header{
     --s: 250px;   /* the size of the image */
     --b: 8px;     /* the border thickness*/
     --g: 14px;    /* the gap */
-    --c: #5bffd1; /* the color */
+    --c: #96ff88; /* the color */
   
   width: 250px;
   aspect-ratio: 1;
@@ -142,10 +155,21 @@ header{
   outline: var(--b) solid var(--c);
   outline-offset: var(--g);
   background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #e7ff5f, #35ffff, #c980bf, #07b39b, #6fba82);
-  animation: animatedgradient 3s ease alternate infinite;
+  animation: animatedgradient 3s ease alternate infinite,
+  movement 1s ease-in;
   background-size: 300% 300%;
 }
 
+@keyframes movement {
+	0% {
+		background-position: 0% 50%;
+    transform: translate(0);
+	}
+	50% {
+		background-position: 100% 50%;
+    transform: translate(0px, -5px);
+	}
+}
 
 @keyframes animatedgradient {
 	0% {
@@ -163,7 +187,7 @@ header{
 /*infinite slide carousel*/
 .carousel {
     width: 1200px;
-    margin: 100px auto;
+    margin: 20px auto;
     padding: 20px 0;
     overflow-x: auto;
     display: flex;
@@ -272,7 +296,7 @@ header{
     font-weight: bold;
     text-decoration: none;
     margin-left: 95vw;
-transition: all .5s ease-in-out;
+transition: all .3s ease-in-out;
 }
 
 .lightbox-close:hover {
