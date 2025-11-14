@@ -8,25 +8,98 @@
 body{
     font-family:Arial, Helvetica, sans-serif;
     background-color:rgb(117, 136, 73);
-    color:white;
+    color:rgb(66, 53, 40);
 }
 
 /*Main Header*/
 
 header{
     background-color:rgb(184, 209, 70);
-   /* padding-top: 10px;
+    padding-top: 0px;
     padding-bottom:10px;
     padding-left: 0;
-    padding-right:0; */
-    padding:10px 0;
+    padding-right:0;
+    height: 250px;
+    position: relative;
+    /*height for border height and position is relative.
+    Absolute will be like it's not there/can be repositioned/not relative to parent if it's a child or in a tag.
+    Relative is like clipping: will stay in the parent.
+
+    Use RELATIVE for parent and ABSOLUTE for child. IF YOU WANT THE THING TO CLIP INSIDE A CERTAIN ELEMENT!
+
+    Absolute will make element go out of doc and everything else will ignore it, based to the body unless parents have position relative.
+    */
 }
 
 #main-logo {
-    display:block;
-    width: 300px;
-    /*margin top and bottom -. left and right auto, auto means equal */
-    margin: 0 auto;
+  width: 500px;
+    /* use posittion abosolute */
+    /* top: 50% and left: 50% place the top-left corner of the logo at the center of the parent/header.
+
+    transform: translate(-50%, -50%) shifts it back by half of its own width and height, perfectly centering it both horizontally and vertically. */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.glitch {
+  animation: glitch 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+}
+
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-4px, 4px);
+  }
+  40% {
+    transform: translate(-4px, -4px);
+  }
+  60% {
+    transform: translate(4px, 4px);
+  }
+  80% {
+    transform: translate(4px, -4px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+#bee1 {
+    transform: translate(0%, 10%)
+    scale(30%);
+    position: absolute;
+    
+}
+
+#bee2 {
+    transform: translate(90%, 90%);
+    position: absolute;
+}
+
+#bee3 {
+    transform: translate(170%, 0%)
+    scale(60%);
+    position: absolute;
+}
+
+#bee4 {
+    transform: translate( 700%, 0%);
+    position: absolute;
+}
+
+#bee5 {
+    transform: translate(950%, 10%)
+    scale(60%);
+    position: absolute;
+}
+
+#bee6 {
+    transform: translate(400%, 50%);
+    position: absolute;
 }
 
 /* Character Nav */
@@ -48,19 +121,26 @@ header{
     text-align: center;
 }
 
-#characters li {
+#characters li { 
     display: inline-block;
-    margin: 60px;
+    margin: 20px;
 }
 
 #characters li img {
     border: solid 1px white;
     border-radius: 50%;
-    padding:10px;
+    padding: 5px;
     background: linear-gradient(to bottom, #e7ff5f, #35ffff, #c980bf);
     box-shadow: 0px 0px 10px 0 rgba(255,255,255, 0.9);
-    transition:all .5s ease-in-out;
-    animation: 15s ease infinite;
+    transition: all .5s ease-out;
+    --s: 250px;   /* the size of the image */
+    --b: 8px;     /* the border thickness*/
+    --g: 14px;    /* the gap */
+    --c: #96ff88; /* the color */
+  
+  width: 250px;
+  aspect-ratio: 1;
+  cursor: pointer;
 }
 
 
@@ -69,25 +149,59 @@ header{
 }
 
 #characters li img:hover {
-    filter: grayscale(100%);
-    width: auto; /* adjust to control the size */
-    aspect-ratio: 1;
-  --g:/14.134% 14.134% radial-gradient(#000 calc(71% - 1px),#0000 71%) no-repeat;
-  mask: 100% 50% var(--g),97.291% 66.235% var(--g),89.457% 80.711% var(--g),77.347% 91.858% var(--g),62.274% 98.47% var(--g),45.871% 99.829% var(--g),29.915% 95.789% var(--g),16.136% 86.786% var(--g),6.026% 73.797% var(--g),0.682% 58.23% var(--g),0.682% 41.77% var(--g),6.026% 26.203% var(--g),16.136% 13.214% var(--g),29.915% 4.211% var(--g),45.871% 0.171% var(--g),62.274% 1.53% var(--g),77.347% 8.142% var(--g),89.457% 19.289% var(--g),97.291% 33.765% var(--g),radial-gradient(100% 100%,#000 42.348%,#0000 calc(42.348% + 1px));
- transition: border-radius 0.5s ease-in-out;
+  aspect-ratio: 1;
+  transform: rotateY(180deg) scale(1.05);
+  outline: var(--b) solid var(--c);
+  outline-offset: var(--g);
+  background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #e7ff5f, #35ffff, #c980bf, #07b39b, #6fba82);
+  animation: animatedgradient 3s ease alternate infinite,
+  movement 1s ease-in;
+  background-size: 300% 300%;
+}
+
+@keyframes movement {
+	0% {
+		background-position: 0% 50%;
+    transform: translate(0);
+	}
+	50% {
+		background-position: 100% 50%;
+    transform: translate(0px, -5px);
+	}
+}
+
+@keyframes animatedgradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 100%;
+	}
 }
 
 
-
-
-  .carousel {
-    margin: 100px auto;
+/*infinite slide carousel*/
+.carousel {
+    width: 1200px;
+    margin: 20px auto;
     padding: 20px 0;
-    overflow: hidden;
-    flex: 0 0 100%;
-    gap: 20px;
+    overflow-x: auto;
+    display: flex;
+    mask-image:linear-gradient(to right, 
+    rgba(0,0,0,0),
+    rgba(0,0,0,1) 20%,
+    rgba(0,0,0,1) 80%,
+    rgba(0,0,0,0)
+    );
   }
   
+  .carousel::-webkit-scrollbar {
+    display: none;
+  }
+
   .group {
     display: flex;
     /*display:flex puts them in a row side by*/
@@ -95,11 +209,12 @@ header{
     justify-content: center;
     align-items: center;
     animation: spin 10s infinite linear;
+    padding-right: 1em;
   }
 
   .card {
     height: 5em;
-    padding: 1em;
+    padding: 3.5em;
     border-radius: .2em;
   }
 
@@ -112,7 +227,124 @@ header{
 
 
 
+/*paper background*/
+:root {
+  --pink: #f6f9d1;
+  --pink-dark: #c6bd93;
+  --tape-gray: #ada02d;
+  --tape-edge-gray: #818b28;
+  --transparent: rgba(255, 255, 255, 0);
+}
 
+.pink {
+  --paper-color: var(--pink);
+  --paper-dark: var(--pink-dark);
+  --shadow-size: 1px;
+  --transparent: rgba(236, 178, 186, 0);
+}
+
+.paper {
+  position: relative;
+  background: linear-gradient(
+      to bottom right,
+      var(--paper-dark),
+      20%,
+      var(--transparent)
+    ),
+    var(--paper-color);
+  min-width: 100px;
+  min-height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Caveat", cursive;
+  font-size: 2rem;
+  color: rgb(67, 44, 33)
+  box-shadow: var(--shadow-size) var(--shadow-size) 2px var(--paper-dark);
+  margin: auto;
+  margin-top: 50px;
+}
+
+.paper::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+      var(--transparent),
+      50%,
+      var(--paper-dark),
+      51%,
+      var(--transparent)
+    ),
+    linear-gradient(
+      to right,
+      var(--transparent),
+      50%,
+      var(--paper-dark),
+      51%,
+      var(--transparent)
+    );
+}
+
+.tape-section {
+  position: absolute;
+  width: 100%;
+}
+
+.top-tape {
+  position: absolute;
+  height: 4vmin;
+  top: -5px;
+  width: 110%;
+  background-color: var(--tape-gray);
+  border-right: 1px dotted var(--tape-edge-gray);
+  border-left: 1px dotted var(--tape-edge-gray);
+  opacity: 0.5;
+}
+
+.tape-section:first-of-type {
+  top: 0;
+}
+
+.tape-section:last-of-type {
+  bottom: 0;
+}
+
+.tape-section::before,
+.tape-section::after {
+  content: "";
+  width: 10vmin;
+  height: 4vmin;
+  position: absolute;
+  background-color: var(--tape-gray);
+  opacity: 0.5;
+  border-right: 1px dotted var(--tape-edge-gray);
+  border-left: 1px dotted var(--tape-edge-gray);
+}
+
+.tape-section:last-of-type::after {
+  transform: rotate(-45deg);
+  right: -4vmin;
+  top: -3vmin;
+}
+
+.tape-section:first-of-type::before {
+  transform: rotate(-45deg);
+  left: -4vmin;
+}
+
+.tape-section:first-of-type::after {
+  transform: rotate(45deg);
+  right: -4vmin;
+  top: 0;
+}
+
+.tape-section:last-of-type::before {
+  transform: rotate(45deg);
+  left: -4vmin;
+  bottom: 0;
+}
 
 #instructions {
     padding: 20px;
@@ -130,7 +362,7 @@ header{
 
 #main-footer {
     height: 80px;
-    background-color: rgb(40,37,37);
+    background-color: rgb(116, 128, 90);
     padding: 20px 0;
     text-align: center;
 }
@@ -149,6 +381,8 @@ header{
     background-repeat: no-repeat;
     background-size: 90vh;
     background-position: 20px top;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
     /*to make all backgrounds for lightbox not repeat it is effecting all lightboxes.*/
 }
 
@@ -171,7 +405,7 @@ header{
 }
 
 #lightbox4 {
-    background-image: url(../images/wilb);
+    background-image: url(../images/Wilburtransparent.png);
 }
 
 .lightbox-close {
@@ -180,7 +414,7 @@ header{
     font-weight: bold;
     text-decoration: none;
     margin-left: 95vw;
-transition: all .5s ease-in-out;
+transition: all .3s ease-in-out;
 }
 
 .lightbox-close:hover {
